@@ -2,11 +2,29 @@ body {
   max-width: 1000px;
 }
 
+nav {
+  float: right;
+  list-style-type: none;
+}
+
+nav li {
+  display: inline;
+  margin: 10px;
+}
+
+h1 {
+  display: inline-block;
+}
+
+.errors {
+  color: orange;
+}
+
 #map {
   height: 65vh;
 }
 html, body {
   height: 100%;
-  margin: 0;
+  margin: 10px;
   padding: 0;
 }
