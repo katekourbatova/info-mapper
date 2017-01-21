@@ -6,13 +6,24 @@
   <meta name="viewport" content="initial-scale=1.0">
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script src="/js/application.js"></script>
-  <script src='https://maps.googleapis.com/maps/api/js?key=<% ENV["GMAPS_API_KEY"] %>&callback=initMap'
+  <script src='https://maps.googleapis.com/maps/api/js?key=<%= ENV["GMAPS_API_KEY"] %>&callback=initMap'
     async defer></script>
 
   <title>Info Mapper</title>
 </head>
 <body>
   <h1>Info Mapper</h1>
+  <nav>
+    <ul>
+      <li><a href='/'>Home</a></li>
+      <% if session_current_user %>
+        <li><a href="/logout">Log Out</a></li>
+      <% else %>
+        <li><a href="/login">Log In or Register</a></li>
+      <% end %>
+    </ul>
+  </nav>
+
   <%= yield %>
 </body>
 </html>
