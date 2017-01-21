@@ -16,8 +16,11 @@
   <nav>
     <ul>
       <li><a href='/'>Home</a></li>
-      <li><a href="/login">Log In or Register</a></li>
-      <li><a href="/logout">Log Out</a></li>
+      <% if session_current_user %>
+        <li><a href="/logout">Log Out</a></li>
+      <% else %>
+        <li><a href="/login">Log In or Register</a></li>
+      <% end %>
     </ul>
   </nav>
 
